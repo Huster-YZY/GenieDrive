@@ -17,7 +17,7 @@ The official implementation of our paper:
 
 ## 📢 News
 
-- **[2054/12/01]** We will release our paper on arXiv.
+- **[2025/12/15]** We release our paper on arXiv.
 
 ## 📋 TODO List
 
