@@ -59,7 +59,7 @@ GenieDrive consistently outperforms previous occupancy-based methods across all 
 <p><em>Performance of Multi-View Video Generation</em></p>
 </div>
 
-## 🎮 Video Demos
+<!-- ## 🎮 Video Demos
 Our GenieDrive supports physics-aware driving video generation, long video generation, video editing, and sim-to-real capabilities. Below are some examples. All videos are compressed for smaller file size.
 
 ### Physics-Aware Video Generation
@@ -152,7 +152,7 @@ Our GenieDrive supports physics-aware driving video generation, long video gener
       Sim-to-Real Generation
     </p>
   </div>
-</div>
+</div> -->
 
 ## 📝 Citation
 
