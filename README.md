@@ -6,7 +6,7 @@ The official implementation of our paper:
 
 >  [Zhenya Yang](https://scholar.google.com/citations?user=4nk3hAgAAAAJ&hl=zh-CN), [Zhe Liu](https://happinesslz.github.io), [Yuxiang Lu](https://innovator-zero.github.io), [Liping Hou](#), [Chenxuan Miao](https://scholar.google.com/citations?user=184t8cAAAAAJ&hl=en), [Siyi Peng](#), [Bailan Feng](#), [Xiang Bai](https://xbai.vlrlab.net), [Hengshuang Zhao](https://i.cs.hku.hk/~hszhao/)
 >
-> 📑 [[arXiv](#)], ⚙️ [[web page](https://huster-yzy.github.io/geniedrive_project_page/)], 🤗 [[model weights](#)]
+> 📑 [[arXiv](https://arxiv.org/abs/2512.12751)], ⚙️ [[web page](https://huster-yzy.github.io/geniedrive_project_page/)], 🤗 [[model weights](#)]
 
 <div id="top" align="center">
 <p align="center">
