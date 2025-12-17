@@ -20,8 +20,7 @@
 † Project leader, ✉ Corresponding author.
 <br>
 
-> 📑 [[arXiv](https://arxiv.org/abs/2512.12751)], ⚙️ [[web page](https://huster-yzy.github.io/geniedrive_project_page/)], 🤗 [[model weights](#)]
-
+> 📑 [[arXiv](https://arxiv.org/abs/2512.12751)], ⚙️ [[project page](https://huster-yzy.github.io/geniedrive_project_page/)], 🤗 [[model weights](#)]
 
 
 <div align="center">
@@ -62,100 +61,8 @@ GenieDrive consistently outperforms previous occupancy-based methods across all 
 <p><em>Performance of Multi-View Video Generation</em></p>
 </div>
 
-<!-- ## 🎮 Video Demos
-Our GenieDrive supports physics-aware driving video generation, long video generation, video editing, and sim-to-real capabilities. Below are some examples. All videos are compressed for smaller file size.
 
-### Physics-Aware Video Generation
 
-<div style="display: flex; justify-content: space-between; gap: 8px; text-align: center;">
-
-  <div style="width: 32%;">
-    <video src="videos/turn_left.mp4" controls width="100%"></video>
-    <p style="font-size: 15px">
-      (a) Turn left
-    </p>
-  </div>
-
-  <div style="width: 32%;">
-    <video src="videos/go_straight.mp4" controls width="100%"></video>
-    <p style="font-size: 15px">
-      (b) Go straight
-    </p>
-  </div>
-
-  <div style="width: 32%;">
-    <video src="videos/turn_right.mp4" controls width="100%"></video>
-    <p style="font-size: 15px">
-      (c) Turn right
-    </p>
-  </div>
-
-</div>
-
-### Long Video Generation
-
-<div style="display: flex; justify-content: space-between; gap: 8px; text-align: center;">
-
-  <div style="width: 80%;">
-    <video src="videos/long_video.mp4" controls width="100%"></video>
-  </div>
-
-</div>
-
-### Driving Scene Editing
-
-<div style="display: flex; justify-content: space-between; gap: 8px; text-align: center;">
-
-  <div style="width: 50%;">
-    <video src="videos/before_edit_0.mp4" controls width="100%"></video>
-     <p style="font-size: 15px">
-      Prior to Removal
-    </p>
-  </div>
-
-  <div style="width: 50%;">
-    <video src="videos/edit_0.mp4" controls width="100%"></video>
-    <p style="font-size: 15px">
-      Post Removal
-    </p>
-  </div>
-</div>
-
-<div style="display: flex; justify-content: space-between; gap: 8px; text-align: center;">
-
-  <div style="width: 50%;">
-    <video src="videos/before_edit_1.mp4" controls width="100%"></video>
-     <p style="font-size: 15px">
-      Prior to Insertion
-    </p>
-  </div>
-
-  <div style="width: 50%;">
-    <video src="videos/edit_1.mp4" controls width="100%"></video>
-    <p style="font-size: 15px">
-      Post Insertion
-    </p>
-  </div>
-</div>
-
-### Sim-to-Real
-
-<div style="display: flex; justify-content: space-between; gap: 8px; text-align: center;">
-
-  <div style="width: 45%;">
-    <video src="videos/sim_1.mp4" controls width="100%"></video>
-     <p style="font-size: 15px">
-      Synthetic Scene
-    </p>
-  </div>
-
-  <div style="width: 70%;">
-    <video src="videos/real_1.mp4" controls width="100%"></video>
-    <p style="font-size: 15px">
-      Sim-to-Real Generation
-    </p>
-  </div>
-</div> -->
 
 ## 📝 Citation
 
@@ -169,4 +76,4 @@ Our GenieDrive supports physics-aware driving video generation, long video gener
 ```
 
 ## Acknowledgements
-We thank these great works and open-source repositories: [I2-World](https://github.com/lzzzzzm/II-World), [UniScene](https://github.com/Arlo0o/UniScene-Unified-Occupancy-centric-Driving-Scene-Generation), [DynamicCity](https://github.com/3DTopia/DynamicCity),  and [VideoX-Fun](https://github.com/aigc-apps/VideoX-Fun).
+We thank these great works and open-source repositories: [I2-World](https://github.com/lzzzzzm/II-World), [UniScene](https://github.com/Arlo0o/UniScene-Unified-Occupancy-centric-Driving-Scene-Generation), [DynamicCity](https://github.com/3DTopia/DynamicCity), [MMDectection3D](https://github.com/open-mmlab/mmdetection3d) and [VideoX-Fun](https://github.com/aigc-apps/VideoX-Fun).
