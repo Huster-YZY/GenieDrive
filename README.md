@@ -2,7 +2,7 @@
 
 ### **GenieDrive: Towards Physics-Aware Driving World Model with 4D Occupancy Guided Video Generation**
 
-[Zhenya Yang](https://scholar.google.com/citations?user=4nk3hAgAAAAJ&hl=zh-CN)<sup>1</sup>, 
+[Zhenya Yang](https://huster-yzy.github.io/)<sup>1</sup>, 
 [Zhe Liu](https://happinesslz.github.io)<sup>1,†</sup>, 
 [Yuxiang Lu](https://innovator-zero.github.io)<sup>1</sup>, 
 [Liping Hou](#)<sup>2</sup>, 
@@ -20,7 +20,7 @@
 † Project leader, ✉ Corresponding author.
 <br>
 
-> 📑 [[arXiv](https://arxiv.org/abs/2512.12751)], ⚙️ [[project page](https://huster-yzy.github.io/geniedrive_project_page/)], 🤗 [[model weights](#)]
+> 📑 [[arXiv](https://arxiv.org/abs/2512.12751)], ⚙️ [[project page](https://huster-yzy.github.io/geniedrive_project_page/)], 🤗 [[model weights](https://huggingface.co/ANIYA673/GenieDrive)]
 
 
 <div align="center">
@@ -31,16 +31,92 @@
 </div>
 
 ## 📢 News
-
-- **[2025/12/15]** We release GenieDrive paper on arXiv. 🔥
+- **[2026/4/29]** We have released the code for GenieDrive.
+- **2026/2/21**: [DrivePI](https://github.com/happinesslz/DrivePI) and GenieDrive have been accepted by CVPR 2026!
+- **2025/12/15**: We release GenieDrive paper on arXiv. 🔥
 * **2025.12.15**: [DrivePI](https://github.com/happinesslz/DrivePI) paper released! A novel spatial-aware 4D MLLM that serves as a unified Vision-Language-Action (VLA) framework that is also compatible with vision-action (VA) models. 🔥
 * **2025.11.04**: Our previous work [UniLION](https://github.com/happinesslz/UniLION) has been released. Check out the [codebase](https://github.com/happinesslz/UniLION) for unified autonomous driving model with Linear Group RNNs. 🚀
 * **2024.09.26**: Our work [LION](https://github.com/happinesslz/LION) has been accepted by NeurIPS 2024. Visit the [codebase](https://github.com/happinesslz/LION) for Linear Group RNN for 3D Object Detection. 🚀
 
 ## 📋 TODO List
 
-- [ ] Release 4D occupancy forecasting code and model weights.
-- [ ] Release multi-view video generator code and weights.
+- ✅ Release 4D occupancy forecasting code and model weights.
+- ✅ Release multi-view video generator code and weights.
+
+## Getting Started
+
+This repository contains a three-stage pipeline for driving scene generation:
+
+1. **`occ_gen`**: generate occupancy (`occ`)
+2. **`occ_rasterizer`**: rasterize the occupancy into semantic maps
+3. **`occ_render`**: generate the final videos based on the rendered semantic maps
+
+### Environment Setup
+
+Please refer to [`occ_gen/README.md`](occ_gen/README.md) for occ generation/forecasting. (geniedrive-occ)
+
+Please refer to [`occ_render/README.md`](occ_render/README.md) and [`occ_rasterizer/README.md`](occ_rasterizer/README.md) for occupancy conditioned video generation. (geniedrive-video)
+
+### Data Preparation
+
+**We have provided preprocessed items that can be used directly for video generation, without the need to run `occ_gen` or download the full NuScenes dataset. For more details, please refer to [`occ_render/README.md`](occ_render/README.md).**
+
+Before running the following steps, please make sure that you have downloaded [NuScenes](https://www.nuscenes.org/nuscenes#download) and [Occ3D-NuScenes](https://tsinghua-mars-lab.github.io/Occ3D/).
+
+To simplify data loading and processing, we recommend creating symbolic links from your NuScenes dataset to the `data/` directories under `occ_gen`, `occ_rasterizer`, and `occ_render`.
+```
+cd occ_gen
+ln -s [Your Nuscenes Path] data
+cd occ_rasterizer
+ln -s [Your Nuscenes Path] data
+cd occ_render
+ln -s [Your Nuscenes Path] data
+```
+
+Download pickle files from huggingface:
+```
+cd occ_gen
+huggingface-cli download --resume-download ANIYA673/GenieDrive --include="*.pkl" --local-dir data
+```
+
+
+Then your dictory should look like:
+
+```
+.
+├── occ_gen/
+│   └── data/
+├── occ_rasterizer/
+│   └── data/
+└── occ_render/
+    └── data/
+          ├── v1.0-trainval/
+          ├── gts/                         # Occ3D-nus occupancy labels
+          ├── samples/                     # nuScenes keyframes
+          ├── sweeps/                      # nuScenes non-keyframes / intermediate frames
+          ├── world-nuscenes_infos_train.pkl
+          ├── world-nuscenes_infos_val.pkl
+          ├── nuscenes_interp_12Hz_infos_train.pkl
+          ├── nuscenes_interp_12Hz_infos_val.pkl
+          ├── nuscenes_infos_temporal_train_3keyframes.pkl
+          └── nuscenes_infos_temporal_val_3keyframes.pkl
+```
+
+### Workflow Overview
+
+We provide 2 workflows to generate multi-view driving videos. The only difference is the source of the occupancy. For workflow 1, we generate video based on our model predicted occupancy:
+
+`occ_gen -> occ_rasterizer -> occ_render`
+
+While workflow 2 utilize the existing occ from Nuscenes occupancy/ Edited occupancy/ Carla occupancy to generate videos:
+
+`gt_occ -> occ_rasterizer -> occ_render`
+
+
+### Model Inference & Training
+For occupancy generation, please refer to [`occ_gen/README.md`](occ_gen/README.md).
+
+For occupancy-conditioned video generation, please refer to [`occ_render/README.md`](occ_render/README.md).
 
 ## 📈 Results
 

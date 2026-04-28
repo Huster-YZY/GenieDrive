@@ -1,0 +1,1 @@
+scripts/wan2.1_fun/train_control.sh

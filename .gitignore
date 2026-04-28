@@ -1,1 +1,11 @@
+build
+.vscode
 .DS_Store
+occ_render/models
+occ_render/data
+occ_gen/data
+occ_rasterizer/data
+__pycache__
+*.egg-info/
+.cache
+*.safetensors

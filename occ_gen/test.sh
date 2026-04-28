@@ -1,0 +1,1 @@
+bash tools/dist_test.sh configs/world_model/vae_e2e.py ./ckpts/genie_occ.pth 6

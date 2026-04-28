@@ -1,0 +1,34 @@
+{
+  "_class_name": "WanTransformer3DModel",
+  "_diffusers_version": "0.35.1",
+  "add_control_adapter": false,
+  "add_ref_conv": true,
+  "cross_attn_norm": true,
+  "cross_attn_type": null,
+  "dim": 1536,
+  "downscale_factor_control_adapter": 8,
+  "eps": 1e-06,
+  "ffn_dim": 8960,
+  "freq_dim": 256,
+  "hidden_size": 1536,
+  "in_channels": 48,
+  "in_dim": 48,
+  "in_dim_control_adapter": 24,
+  "in_dim_ref_conv": 16,
+  "model_type": "i2v",
+  "num_heads": 12,
+  "num_layers": 30,
+  "out_dim": 16,
+  "patch_size": [
+    1,
+    2,
+    2
+  ],
+  "qk_norm": true,
+  "text_dim": 4096,
+  "text_len": 512,
+  "window_size": [
+    -1,
+    -1
+  ]
+}
