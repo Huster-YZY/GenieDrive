@@ -28,12 +28,19 @@ pip install -r requirements.txt
 huggingface-cli download --resume-download ANIYA673/GenieDrive --include="genie_occ.pth" --local-dir ckpts --local-dir-use-symlinks False
 ```
 
+To download the pretrained VAE before the end-to-end tuning:
+```bash
+huggingface-cli download --resume-download ANIYA673/GenieDrive --include="vae_d64_210.pth" --local-dir ckpts --local-dir-use-symlinks False
+```
+Please refer to [vae/README.md](./vae/README.md) if you want to train the VAE from scratch.
+
 Then your dictory should look like:
 ```
 occ_gen
 ├── mmdet3d
 ├── ckpts/
 │   ├── genie_occ.pth
+│   ├── vae_d64_210.pth
 ├── data/
 │   ├── nuscenes/
 │   │   ├── samples/ 
@@ -46,4 +53,9 @@ occ_gen
 ## Evaluation
 ```bash
 ./test.sh
+```
+
+## Training
+```bash
+to be added
 ```
