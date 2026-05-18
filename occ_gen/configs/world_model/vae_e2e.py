@@ -149,7 +149,7 @@ _base_ = ['../_base_/datasets/nus-3d.py', '../_base_/default_runtime.py']
 
 dataset_name = 'occ3d'
 eval_metric = 'forecasting_miou'
-
+stage2_init_ckpt = 'ckpts/stage2_init_ckpt.pth'
 class_weights = [0.0727, 0.0692, 0.0838, 0.0681, 0.0601, 0.0741, 0.0823, 0.0688, 0.0773, 0.0681, 0.0641, 0.0527, 0.0655, 0.0563, 0.0558, 0.0541, 0.0538, 0.0468] # occ-3d
 
 occ_class_names = ['others','barrier', 'bicycle', 'bus', 'car', 'construction_vehicle','motorcycle', 'pedestrian', 'traffic_cone', 'trailer', 'truck',

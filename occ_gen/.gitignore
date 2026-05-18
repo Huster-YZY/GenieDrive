@@ -1,3 +1,5 @@
 ckpts
 data
 generate_output
+work_dirs
+.cache

@@ -42,7 +42,7 @@ test_sequences_split_num = 1
 num_gpus = 8
 samples_per_gpu = 8 #16 #batch_size
 workers_per_gpu = 20
-total_epoch = 24 #48
+total_epoch = 48
 num_iters_per_epoch = int(28130 // (num_gpus * samples_per_gpu)*4.554)      # total samples: 28130
 
 # Model Config
@@ -67,7 +67,7 @@ memory_frame_number = 9 # the final frame could condition on all 4 hist frames
 
 task_mode = 'generate'
 model = dict(
-    type='II_World',
+    type='EE_World',
     previous_frame_exist=True if train_load_previous_frame_number > 0 else False,
     previous_frame=previous_frame,
     train_future_frame=train_load_future_frame_number,
@@ -241,11 +241,11 @@ for key in ['val', 'train', 'test']:
     data[key].update(share_data_config)
 
 # Optimizer
-lr =  1e-4
+lr =  1e-3
 optimizer = dict(type='AdamW', lr=lr, weight_decay=1e-2)
 optimizer_config = dict(grad_clip=dict(max_norm=5, norm_type=2),)
 
-step_epoch = 20
+step_epoch = 36
 lr_config = dict(
     policy='step',
     warmup='linear',

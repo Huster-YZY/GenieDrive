@@ -56,6 +56,14 @@ occ_gen
 ```
 
 ## Training
+The training process of the occupancy forecasting model consists of two stages. In the first stage, we freeze the VAE and train only the forecasting module. In the second stage, we further perform end-to-end training.
+
+Please note that, during development, we trained the model iteratively while exploring different configurations, including different ways of injecting the planning signal, such as addition or attention, as well as different supervision losses, such as feature-level L2 loss or feature loss combined with Lovász-Softmax loss. Therefore, it is difficult to provide a single standardized and fully reproducible procedure for Stage 1.
+
+To facilitate reproduction, we provide our trained Stage-1 model as the initialization for Stage 2. The Stage-2 training procedure is listed as follows:
+
 ```bash
-to be added
+huggingface-cli download --resume-download ANIYA673/GenieDrive --include="stage2_init_ckpt.pth" --local-dir ckpts --local-dir-use-symlinks False
+
+bash tools/dist_train.sh configs/world_model/vae_e2e.py 8
 ```

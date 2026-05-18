@@ -231,15 +231,7 @@ def main():
         test_cfg=cfg.get('test_cfg'))
     model.init_weights()
 
-    # load_checkpoint(model, "/data2/zhenya/i2/work_dirs/ee_scene_tokenizer_4f_v1_unnorm/iter_7996_ema.pth", map_location="cpu")
-    # load_checkpoint(model, "/data2/zhenya/i2/work_dirs/ee_generate_world_reg/iter_47976_ema.pth", map_location="cpu")
-    # load_checkpoint(model, "/data2/zhenya/i2/work_dirs/vae_generate_world_act_aware/iter_23928_ema.pth", map_location="cpu")
-    # load_checkpoint(model, "/data2/zhenya/i2/work_dirs/merge.pth", map_location="cpu")
-    # load_checkpoint(model, "/data2/zhenya/i2/work_dirs/xo_vae.pth", map_location="cpu")
-    # load_checkpoint(model, "/data2/zhenya/i2/work_dirs/vae_merge.pth", map_location="cpu")
-    # load_checkpoint(model, "/data2/zhenya/i2/work_dirs/vae_generate_world_tune/iter_47976_ema.pth", map_location="cpu")
-    load_checkpoint(model, "/data2/zhenya/i2/work_dirs/vae_generate_world_128_half/iter_73104_ema.pth", map_location="cpu")
-    # model.vq.increase_codebook_size(600)
+    load_checkpoint(model, cfg.stage2_init_ckpt, map_location="cpu")
 
     n_parameters = sum(p.numel() for p in model.parameters() if p.requires_grad)
     logger.info(f'Total parameters: {n_parameters}')
